@@ -33,4 +33,36 @@
   </mat-card-content>
 </mat-card>
 
+<mat-card *ngIf="leader" fxFlex>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h3>{{leader.name | uppercase}}</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src={{leader.image}} alt={{leader.name}}>
+  <mat-card-content>
+    <p>{{leader.description}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+</div>
+<br>
+<div class="container">
+    <div class="col-md-8 col-sm-12">
+          <div class="panel-heading">
+            Comment
+          </div>
+          <div class="panel-body">
+            <textarea class="form-control" id="shruti" placeholder="write a comment..." rows="5" cols="50" maxlength="100" (keyup)="calculateRemaining()"></textarea>
+            <p id="remaining"></p>
+            <br>
+            <button type="button" class="btn pull-right" mat-raised-button color="primary" (click)="post()"> Post </button>
+          </div>
+  </div>
+</div>
+<br>
+<div class="container" *ngIf ="commentValue">
+  <p>{{this.commentValue}}</p>
 </div>
